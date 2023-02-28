@@ -7,6 +7,8 @@ public class Protagonist : MonoBehaviour
     
     Rigidbody2D pRB;
 
+    SpriteRenderer prSpR;
+
     float runSpeed = 30.0f;
 
     // Start is called before the first frame update
