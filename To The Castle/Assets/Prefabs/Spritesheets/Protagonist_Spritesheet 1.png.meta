@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eaae7251e7677ff419142f08b64d152c
+guid: 43a20cb4cc352054d8a032c51e8b11f4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Protagonist_Spritesheet_0
+      name: Protagonist_Spritesheet 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 262af21aa4f784341b554c8e7262b05b
-      internalID: -648618518
+      spriteID: af6422ffd6682c64f9ecc4c372ce8037
+      internalID: -1836524549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protagonist_Spritesheet_1
+      name: Protagonist_Spritesheet 1_1
       rect:
         serializedVersion: 2
         x: 457
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cecad1fad4dc48b4bb1620df8f109b00
-      internalID: -1735929866
+      spriteID: aa6dccace92dd2847bce56d7ac8e7856
+      internalID: -389645003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protagonist_Spritesheet_2
+      name: Protagonist_Spritesheet 1_2
       rect:
         serializedVersion: 2
         x: 914
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dee8ad4fdc6df7a4cbda1bcb8c4223c1
-      internalID: -93119520
+      spriteID: bc3cedfb3a44f5446952dc54181abed1
+      internalID: 1240683107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protagonist_Spritesheet_3
+      name: Protagonist_Spritesheet 1_3
       rect:
         serializedVersion: 2
         x: 1371
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b86c2f20a4a7dc47b117319f8041082
-      internalID: -1325066712
+      spriteID: 9d8e66b42676b674ab803238a8cb73fd
+      internalID: -87238265
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protagonist_Spritesheet_4
+      name: Protagonist_Spritesheet 1_4
       rect:
         serializedVersion: 2
         x: 1828
@@ -215,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd735555382da0344b6d685420a8d39e
-      internalID: -1541938694
+      spriteID: c60dec989aed7c24e97f9714777ce9ae
+      internalID: -701936012
       vertices: []
       indices: 
       edges: []
@@ -232,11 +232,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Protagonist_Spritesheet_1: -1735929866
-      Protagonist_Spritesheet_3: -1325066712
-      Protagonist_Spritesheet_0: -648618518
-      Protagonist_Spritesheet_4: -1541938694
-      Protagonist_Spritesheet_2: -93119520
+      Protagonist_Spritesheet 1_0: -1836524549
+      Protagonist_Spritesheet 1_2: 1240683107
+      Protagonist_Spritesheet 1_4: -701936012
+      Protagonist_Spritesheet 1_1: -389645003
+      Protagonist_Spritesheet 1_3: -87238265
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
