@@ -13,6 +13,8 @@ public class Protagonist : MonoBehaviour
 
     Vector3 thisWaythisSpeed;
 
+    public Protag_Anim_Chooser leProtagAnim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,9 +42,14 @@ public class Protagonist : MonoBehaviour
         GetComponent<Rigidbody2D>().MovePosition(transform.position + thisWaythisSpeed);
 
         if (thisWaythisSpeed != Vector3.zero)
-        {           
+        {
 
-            if (thisWaythisSpeed.x < 0)
+            thisWaythisSpeed.Normalize();
+            thisWaythisSpeed *= Time.fixedDeltaTime;
+
+            leProtagAnim.ChangeAnimState("Protag_Run");
+
+            if ((thisWaythisSpeed.x < 0 && thisWaythisSpeed.y > 0) || (thisWaythisSpeed.x < 0 && thisWaythisSpeed.y < 0) || (thisWaythisSpeed.x < 0))
             {
                 prSpR.flipX = true;
             }
@@ -50,6 +57,10 @@ public class Protagonist : MonoBehaviour
             {
                 prSpR.flipX = false;
             }
+        }
+        else
+        {
+            leProtagAnim.ChangeAnimState("Idle");
         }
     }
 }

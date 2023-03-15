@@ -1159,6 +1159,7 @@ GameObject:
   - component: {fileID: 1957052678}
   - component: {fileID: 1957052679}
   - component: {fileID: 1957052680}
+  - component: {fileID: 1957052681}
   m_Layer: 6
   m_Name: Protagonist
   m_TagString: Player
@@ -1212,7 +1213,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.75, y: 5.25}
+  m_Size: {x: 1, y: 1.105957}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -1252,7 +1253,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1.105957}
-    newSize: {x: 4.75, y: 5.25}
+    newSize: {x: 1, y: 1.105957}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -1272,6 +1273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b1fb724ab0235045bfbcbcfba5ec647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leProtagAnim: {fileID: 1957052681}
 --- !u!50 &1957052679
 Rigidbody2D:
   serializedVersion: 4
@@ -1303,7 +1305,7 @@ Animator:
   m_GameObject: {fileID: 1957052674}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 15ad411b2b8d24841bde7a640351b475, type: 2}
+  m_Controller: {fileID: 9100000, guid: 61ecd456872f35043b8b8e31512bd352, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1313,3 +1315,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1957052681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957052674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5244e28c42c7c0a40b05998ccab8f3ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  protagAnim: {fileID: 1957052680}
+  currSt: Idle
