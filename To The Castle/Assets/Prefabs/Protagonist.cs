@@ -13,7 +13,7 @@ public class Protagonist : MonoBehaviour
 
     Vector3 thisWaythisSpeed;
 
-    public Protag_Anim_Chooser leProtagAnim;
+    public Protag_Anim_Changer leProtagAnim;
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +22,6 @@ public class Protagonist : MonoBehaviour
         prSpR = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void FixedUpdate()
     {

@@ -1324,8 +1324,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1957052674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5244e28c42c7c0a40b05998ccab8f3ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 292d3b67761db7c4e997279def2c2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  protagAnim: {fileID: 1957052680}
-  currSt: Idle
+  proAnim: {fileID: 1957052680}
+  currState: Idle
