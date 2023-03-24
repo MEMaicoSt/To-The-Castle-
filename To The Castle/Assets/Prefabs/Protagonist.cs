@@ -59,6 +59,10 @@ public class Protagonist : MonoBehaviour
             {
              leProtagAnim.ChangeAnimState("Kick");
             }
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+             leProtagAnim.ChangeAnimState("Protag_Punch");
+            }
 
             leProtagAnim.ChangeAnimState("Idle");
         }
