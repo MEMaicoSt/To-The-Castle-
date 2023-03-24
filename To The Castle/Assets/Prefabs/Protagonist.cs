@@ -55,10 +55,10 @@ public class Protagonist : MonoBehaviour
         }
         else
         {
-            //if (Input.GetKeyDown(KeyKode.K))
-           // {
-           //  leProtagAnim.ChangeAnimState("Kick");
-           // }
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+             leProtagAnim.ChangeAnimState("Kick");
+            }
 
             leProtagAnim.ChangeAnimState("Idle");
         }
