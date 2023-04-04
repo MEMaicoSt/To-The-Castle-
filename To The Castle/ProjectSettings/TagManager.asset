@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - taiyaki
+  - dragonfruit
   layers:
   - Default
   - TransparentFX

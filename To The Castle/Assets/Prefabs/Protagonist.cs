@@ -15,11 +15,14 @@ public class Protagonist : MonoBehaviour
 
     public Protag_Anim_Changer leProtagAnim;
 
+    int health;
+
     // Start is called before the first frame update
     void Start()
     {
         pRB = GetComponent<Rigidbody2D>();
         prSpR = GetComponent<SpriteRenderer>();
+        health = 100;
     }
 
 
@@ -66,5 +69,33 @@ public class Protagonist : MonoBehaviour
 
             leProtagAnim.ChangeAnimState("Idle");
         }
+
     }
+
+    void OnCollisionEnter2D(Collision2D hit)
+    {
+        if (hit.gameObject.tag == "taiyaki" || hit.gameObject.tag == "dragonfruit")
+        {
+            Destroy(hit.gameObject);
+
+           if(health < 100)
+            {
+                health += 5;
+            }
+            if(health > 100)
+            {
+                health = 100;
+            }
+        }
+
+        if(hit.gameObject.tag == "Enemy" /*and the enemy is attacking while you're not blocking*/)
+        {
+
+        }
+    }
+
+    //references:
+    //https://docs.unity3d.com/ScriptReference/Collider.OnCollisionEnter.html
+    //https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnCollisionEnter2D.html
+    //https://www.youtube.com/watch?v=QRp4V1JTZnM
 }
