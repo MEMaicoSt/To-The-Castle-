@@ -48,20 +48,13 @@ public class SupNat_Enemy_2 : MonoBehaviour
         if (Protag.transform.position.x >= supEn2.transform.position.x - 20.0f)
         {
            
-            if (Protag.transform.position.x <= supEn2.transform.position.x - 10.0f)
+            if (Protag.transform.position.x <= supEn2.transform.position.x - 14.0f )
             {
-               // transform.position = Vector2.MoveTowards(new Vector2(supEn2.transform.position.x, supEn2.transform.position.y), new Vector2(Protag.transform.position.x-10, Protag.transform.position.y-10), supEn2RunSpeed * Time.fixedDeltaTime);
+                // transform.position = Vector2.MoveTowards(new Vector2(supEn2.transform.position.x, supEn2.transform.position.y), new Vector2(Protag.transform.position.x-10, Protag.transform.position.y-10), supEn2RunSpeed * Time.fixedDeltaTime);
+           
                 leEnAnim.ChangeAnimState("Supernatural_Enemy_2_Sp_Att"); 
                 
 
-                if ((Protag.transform.position.x < 0 && supEn2.transform.position.x > 0) || (Protag.transform.position.x > 0 && supEn2.transform.position.x < 0) || (Protag.transform.position.x < 0 && supEn2.transform.position.x < 0))
-                {
-                    se2SpR.flipX = true;
-                }
-                else
-                {
-                    se2SpR.flipX = false;
-                }
 
             }
 
