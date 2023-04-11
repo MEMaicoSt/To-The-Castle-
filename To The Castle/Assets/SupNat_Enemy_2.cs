@@ -47,9 +47,27 @@ public class SupNat_Enemy_2 : MonoBehaviour
         //If the protagonist gets close, run towards her.
         if (Protag.transform.position.x >= supEn2.transform.position.x - 20.0f)
         {
+           
+            if (Protag.transform.position.x <= supEn2.transform.position.x - 10.0f)
+            {
+               // transform.position = Vector2.MoveTowards(new Vector2(supEn2.transform.position.x, supEn2.transform.position.y), new Vector2(Protag.transform.position.x-10, Protag.transform.position.y-10), supEn2RunSpeed * Time.fixedDeltaTime);
+                leEnAnim.ChangeAnimState("Supernatural_Enemy_2_Sp_Att"); 
+                
+
+                if ((Protag.transform.position.x < 0 && supEn2.transform.position.x > 0) || (Protag.transform.position.x > 0 && supEn2.transform.position.x < 0) || (Protag.transform.position.x < 0 && supEn2.transform.position.x < 0))
+                {
+                    se2SpR.flipX = true;
+                }
+                else
+                {
+                    se2SpR.flipX = false;
+                }
+
+            }
 
             leEnAnim.ChangeAnimState("Supernatural_Enemy_2_Run");
-            transform.position = Vector2.MoveTowards(new Vector2(supEn2.transform.position.x, supEn2.transform.position.y), new Vector2(Protag.transform.position.x, Protag.transform.position.y), supEn2RunSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(new Vector2(supEn2.transform.position.x, supEn2.transform.position.y), new Vector2(Protag.transform.position.x, Protag.transform.position.y), supEn2RunSpeed * Time.fixedDeltaTime);
+
 
             if ((Protag.transform.position.x < 0 && supEn2.transform.position.x > 0) || (Protag.transform.position.x > 0 && supEn2.transform.position.x < 0) || (Protag.transform.position.x < 0 && supEn2.transform.position.x < 0))
             {
@@ -59,9 +77,15 @@ public class SupNat_Enemy_2 : MonoBehaviour
             {
                 se2SpR.flipX = false;
             }
+        
+           
         }
+          
+         
+        
         else
         {
+          
             leEnAnim.ChangeAnimState("Supernatural_Enemy_2_Idle");
         }
 

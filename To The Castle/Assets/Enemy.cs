@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
         {
            
             leEnAnim.ChangeAnimState("Enemy_1_Running");
-            transform.position = Vector2.MoveTowards(new Vector2(en.transform.position.x, en.transform.position.y), new Vector2(Protag.transform.position.x,Protag.transform.position.y), enRunSpeed*Time.deltaTime);
+            transform.position = Vector2.MoveTowards(new Vector2(en.transform.position.x, en.transform.position.y), new Vector2(Protag.transform.position.x,Protag.transform.position.y), enRunSpeed*Time.fixedDeltaTime);
 
            if((Protag.transform.position.x < 0 && en.transform.position.x > 0) || (Protag.transform.position.x > 0 && en.transform.position.x < 0) || (Protag.transform.position.x < 0 && en.transform.position.x < 0))
             {
