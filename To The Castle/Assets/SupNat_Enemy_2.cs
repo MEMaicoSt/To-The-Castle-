@@ -47,16 +47,14 @@ public class SupNat_Enemy_2 : MonoBehaviour
         //If the protagonist gets close, run towards her.
         if (Protag.transform.position.x >= supEn2.transform.position.x - 20.0f)
         {
-           
+           /*
             if (Protag.transform.position.x <= supEn2.transform.position.x - 14.0f )
             {
                 // transform.position = Vector2.MoveTowards(new Vector2(supEn2.transform.position.x, supEn2.transform.position.y), new Vector2(Protag.transform.position.x-10, Protag.transform.position.y-10), supEn2RunSpeed * Time.fixedDeltaTime);
            
                 leEnAnim.ChangeAnimState("Supernatural_Enemy_2_Sp_Att"); 
-                
-
-
             }
+           */
 
             leEnAnim.ChangeAnimState("Supernatural_Enemy_2_Run");
             transform.position = Vector2.MoveTowards(new Vector2(supEn2.transform.position.x, supEn2.transform.position.y), new Vector2(Protag.transform.position.x, Protag.transform.position.y), supEn2RunSpeed * Time.fixedDeltaTime);

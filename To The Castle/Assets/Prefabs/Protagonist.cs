@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Protagonist : MonoBehaviour
 {
-    
+
+    public GameObject PUNCH;
+    public GameObject KICK;
+
     Rigidbody2D pRB;
 
     SpriteRenderer prSpR;
@@ -23,6 +26,7 @@ public class Protagonist : MonoBehaviour
         pRB = GetComponent<Rigidbody2D>();
         prSpR = GetComponent<SpriteRenderer>();
         health = 100;
+        
     }
 
 
@@ -31,6 +35,7 @@ public class Protagonist : MonoBehaviour
 
         run();
         
+
     }
 
     void run()
@@ -56,21 +61,26 @@ public class Protagonist : MonoBehaviour
                 prSpR.flipX = false;
             }
         }
+        
         else
         {
-            if (Input.GetKeyDown(KeyCode.K))
-            {
-             leProtagAnim.ChangeAnimState("Kick");
+             if (Input.GetKeyDown(KeyCode.K))
+             {
+              leProtagAnim.ChangeAnimState("Kick");
+               KICK.GetComponent<AudioSource>().Play();
+             }
+             if (Input.GetKeyDown(KeyCode.P))
+             {
+              leProtagAnim.ChangeAnimState("Protag_Punch");
+              PUNCH.GetComponent<AudioSource>().Play();
             }
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-             leProtagAnim.ChangeAnimState("Protag_Punch");
-            }
-
+             
             leProtagAnim.ChangeAnimState("Idle");
         }
 
     }
+
+    
 
     void OnCollisionEnter2D(Collision2D hit)
     {
@@ -88,14 +98,12 @@ public class Protagonist : MonoBehaviour
             }
         }
 
-        if(hit.gameObject.tag == "Enemy" /*and the enemy is attacking while you're not blocking*/)
-        {
 
-        }
     }
 
     //references:
     //https://docs.unity3d.com/ScriptReference/Collider.OnCollisionEnter.html
     //https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnCollisionEnter2D.html
     //https://www.youtube.com/watch?v=QRp4V1JTZnM
+    //https://docs.unity3d.com/ScriptReference/AudioSource.Play.html
 }
