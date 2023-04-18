@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Protagonist : MonoBehaviour
+public class Prot : MonoBehaviour
 {
 
     public GameObject PUNCH;
@@ -67,12 +67,12 @@ public class Protagonist : MonoBehaviour
              if (Input.GetKeyDown(KeyCode.K))
              {
               leProtagAnim.ChangeAnimState("Kick");
-               KICK.GetComponent<AudioSource>().Play();
+              
              }
              if (Input.GetKeyDown(KeyCode.P))
              {
               leProtagAnim.ChangeAnimState("Protag_Punch");
-              PUNCH.GetComponent<AudioSource>().Play();
+              
             }
              
             leProtagAnim.ChangeAnimState("Idle");
@@ -96,6 +96,22 @@ public class Protagonist : MonoBehaviour
             {
                 health = 100;
             }
+        }
+
+        if((hit.gameObject.tag == "Enemy" || hit.gameObject.tag == "Supernatural_Enemy") && leProtagAnim.currState == "Idle" && Input.GetKeyDown(KeyCode.K))
+        {
+            KICK.GetComponent<AudioSource>().Play();
+        }
+
+        if ((hit.gameObject.tag == "Enemy" || hit.gameObject.tag == "Supernatural_Enemy") && leProtagAnim.currState == "Idle" && Input.GetKeyDown(KeyCode.P))
+        {
+            PUNCH.GetComponent<AudioSource>().Play();
+        }
+
+        if(hit.gameObject.tag == "Bat")
+        {
+            Destroy(hit.gameObject);
+            health -= 10;
         }
 
 

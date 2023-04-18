@@ -12,11 +12,11 @@ public class SupNat_Enemy_2 : MonoBehaviour
 
     float supEn2RunSpeed = 15.0f;
 
-
-
     public SupNat_Enemy_2_Anim_Changer leEnAnim;
 
     public GameObject Protag;
+
+    public GameObject Bat;
 
     // int health;
 
@@ -47,14 +47,14 @@ public class SupNat_Enemy_2 : MonoBehaviour
         //If the protagonist gets close, run towards her.
         if (Protag.transform.position.x >= supEn2.transform.position.x - 20.0f)
         {
-           /*
+           //If the protagonist is close enough, summon bats to attack the protagonist.
             if (Protag.transform.position.x <= supEn2.transform.position.x - 14.0f )
             {
-                // transform.position = Vector2.MoveTowards(new Vector2(supEn2.transform.position.x, supEn2.transform.position.y), new Vector2(Protag.transform.position.x-10, Protag.transform.position.y-10), supEn2RunSpeed * Time.fixedDeltaTime);
-           
+               
                 leEnAnim.ChangeAnimState("Supernatural_Enemy_2_Sp_Att"); 
+                batSummon();
             }
-           */
+           
 
             leEnAnim.ChangeAnimState("Supernatural_Enemy_2_Run");
             transform.position = Vector2.MoveTowards(new Vector2(supEn2.transform.position.x, supEn2.transform.position.y), new Vector2(Protag.transform.position.x, Protag.transform.position.y), supEn2RunSpeed * Time.fixedDeltaTime);
@@ -70,9 +70,7 @@ public class SupNat_Enemy_2 : MonoBehaviour
             }
         
            
-        }
-          
-         
+        } 
         
         else
         {
@@ -81,4 +79,19 @@ public class SupNat_Enemy_2 : MonoBehaviour
         }
 
     }
+
+    
+    void batSummon()
+    {
+        StartCoroutine(BatAttackRoutine());
+
+        IEnumerator BatAttackRoutine()
+        {
+          yield return new WaitForSeconds(3f);
+          GameObject bat = Instantiate(Bat, (new Vector2(Random.Range(-30.0f,-22.0f), 13.77f)), Quaternion.identity);
+          Destroy(bat, 10);
+        }
+    }
+
+    
 }
