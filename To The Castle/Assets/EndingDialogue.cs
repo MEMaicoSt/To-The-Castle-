@@ -59,5 +59,5 @@ public class EndingDialogue : MonoBehaviour
         StartCoroutine(endingCutsceneLinesRoutine());
     }
 
-
+    //references: https://www.youtube.com/watch?v=8oTYabhj248
 }
