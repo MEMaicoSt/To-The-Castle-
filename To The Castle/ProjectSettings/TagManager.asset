@@ -9,6 +9,8 @@ TagManager:
   - dragonfruit
   - Supernatural_Enemy
   - Bat
+  - LightningBolt
+  - Flamingo
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Prot : MonoBehaviour
@@ -7,6 +8,7 @@ public class Prot : MonoBehaviour
 
     public GameObject PUNCH;
     public GameObject KICK;
+   
 
     Rigidbody2D pRB;
 
@@ -18,15 +20,17 @@ public class Prot : MonoBehaviour
 
     public Protag_Anim_Changer leProtagAnim;
 
-    int health;
+    public Transform hB;
+
+    public float currX;
 
     // Start is called before the first frame update
     void Start()
     {
         pRB = GetComponent<Rigidbody2D>();
         prSpR = GetComponent<SpriteRenderer>();
-        health = 100;
-        
+        hB.localScale = new Vector3(1f, 1f, 1f);
+ 
     }
 
 
@@ -74,7 +78,13 @@ public class Prot : MonoBehaviour
               leProtagAnim.ChangeAnimState("Protag_Punch");
               
             }
-             
+
+            if (hB.localScale.x < 0)
+            {
+                hB.localScale = new Vector3(0f, 1f, 1f);
+            }
+            
+
             leProtagAnim.ChangeAnimState("Idle");
         }
 
@@ -88,19 +98,21 @@ public class Prot : MonoBehaviour
         {
             Destroy(hit.gameObject);
 
-           if(health < 100)
+
+            hB.localScale = new Vector3((hB.localScale.x + 0.2f), 1f, 1f);
+
+            if (hB.localScale.x > 1)
             {
-                health += 5;
+                hB.localScale = new Vector3(1f, 1f, 1f);
             }
-            if(health > 100)
-            {
-                health = 100;
-            }
+
+
         }
 
         if((hit.gameObject.tag == "Enemy" || hit.gameObject.tag == "Supernatural_Enemy") && leProtagAnim.currState == "Idle" && Input.GetKeyDown(KeyCode.K))
         {
             KICK.GetComponent<AudioSource>().Play();
+            
         }
 
         if ((hit.gameObject.tag == "Enemy" || hit.gameObject.tag == "Supernatural_Enemy") && leProtagAnim.currState == "Idle" && Input.GetKeyDown(KeyCode.P))
@@ -111,7 +123,10 @@ public class Prot : MonoBehaviour
         if(hit.gameObject.tag == "Bat")
         {
             Destroy(hit.gameObject);
-            health -= 10;
+
+            currX = hB.localScale.x - 0.1f;
+
+            hB.localScale = new Vector3(currX, 1f, 1f);
         }
 
 
@@ -122,4 +137,5 @@ public class Prot : MonoBehaviour
     //https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnCollisionEnter2D.html
     //https://www.youtube.com/watch?v=QRp4V1JTZnM
     //https://docs.unity3d.com/ScriptReference/AudioSource.Play.html
+    
 }
