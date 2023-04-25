@@ -71,15 +71,17 @@ public class Prot : MonoBehaviour
              if (Input.GetKeyDown(KeyCode.K))
              {
               leProtagAnim.ChangeAnimState("Kick");
-              
-             }
+               KICK.GetComponent<AudioSource>().Play();
+
+            }
              if (Input.GetKeyDown(KeyCode.P))
              {
               leProtagAnim.ChangeAnimState("Protag_Punch");
-              
+                PUNCH.GetComponent<AudioSource>().Play();
+
             }
 
-           
+
             leProtagAnim.ChangeAnimState("Idle");
         }
 
