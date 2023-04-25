@@ -38,7 +38,14 @@ public class Prot : MonoBehaviour
     {
 
         run();
-        
+         if (hB.localScale.x < 0 || hB.localScale.x == 0)
+        {
+            hB.localScale = new Vector3(0f, 1f, 1f);
+
+            leProtagAnim.ChangeAnimState("Protag_0_Health");
+            leProtagAnim.ChangeAnimState("Protag_0_Health_On_Floor");
+
+        }
 
     }
 
@@ -66,7 +73,8 @@ public class Prot : MonoBehaviour
             }
         }
        
-
+          
+          
         else 
         {
              if (Input.GetKeyDown(KeyCode.K))
@@ -86,14 +94,7 @@ public class Prot : MonoBehaviour
             leProtagAnim.ChangeAnimState("Idle");
         }
 
-        if (hB.localScale.x < 0 || hB.localScale.x == 0)
-        {
-            hB.localScale = new Vector3(0f, 1f, 1f);
-
-            leProtagAnim.ChangeAnimState("Protag_0_Health");
-            leProtagAnim.ChangeAnimState("Protag_0_Health_On_Floor");
-
-        }
+       
 
     }
 
