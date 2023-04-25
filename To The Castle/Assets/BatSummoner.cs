@@ -28,9 +28,10 @@ public class BatSummoner : MonoBehaviour
                 yield return new WaitForSeconds(1f);
                 GameObject bAt = Instantiate(bat, (new Vector2(Random.Range(-25.0f, 29.0f), 16.15f)), Quaternion.identity);
 
-            if (Protag.transform.position.y <= bAt.transform.position.y - 20.0f)
+            if (Protag.transform.position.y <= bAt.transform.position.y)
             {
                 bAt.transform.position = Vector2.MoveTowards(new Vector2(bAt.transform.position.x, bAt.transform.position.y), new Vector2(Protag.transform.position.x, Protag.transform.position.y), 15.0f * Time.fixedDeltaTime);
+                Debug.Log("Moving towards");
             }
 
                 Destroy(bAt, 4);

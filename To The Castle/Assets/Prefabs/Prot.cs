@@ -66,7 +66,7 @@ public class Prot : MonoBehaviour
             }
         }
         
-        else
+        else 
         {
              if (Input.GetKeyDown(KeyCode.K))
              {
@@ -79,16 +79,21 @@ public class Prot : MonoBehaviour
               
             }
 
-            if (hB.localScale.x < 0)
-            {
-                hB.localScale = new Vector3(0f, 1f, 1f);
-            }
-            
-
+           
             leProtagAnim.ChangeAnimState("Idle");
         }
 
+        if (hB.localScale.x < 0 || hB.localScale.x == 0)
+        {
+            hB.localScale = new Vector3(0f, 1f, 1f);
+
+            leProtagAnim.ChangeAnimState("Protag_0_Health");
+            leProtagAnim.ChangeAnimState("Protag_0_Health_On_Floor");
+
+        }
+
     }
+
 
     
 
@@ -109,13 +114,13 @@ public class Prot : MonoBehaviour
 
         }
 
-        if((hit.gameObject.tag == "Enemy" || hit.gameObject.tag == "Supernatural_Enemy") && leProtagAnim.currState == "Idle" && Input.GetKeyDown(KeyCode.K))
+        if((hit.gameObject.tag == "Enemy" || hit.gameObject.tag == "Supernatural_Enemy")  && Input.GetKeyDown(KeyCode.K))
         {
             KICK.GetComponent<AudioSource>().Play();
             
         }
 
-        if ((hit.gameObject.tag == "Enemy" || hit.gameObject.tag == "Supernatural_Enemy") && leProtagAnim.currState == "Idle" && Input.GetKeyDown(KeyCode.P))
+        if ((hit.gameObject.tag == "Enemy" || hit.gameObject.tag == "Supernatural_Enemy")  && Input.GetKeyDown(KeyCode.P))
         {
             PUNCH.GetComponent<AudioSource>().Play();
         }
