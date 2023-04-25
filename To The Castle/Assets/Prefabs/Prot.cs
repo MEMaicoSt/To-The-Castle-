@@ -65,7 +65,8 @@ public class Prot : MonoBehaviour
                 prSpR.flipX = false;
             }
         }
-        
+       
+
         else 
         {
              if (Input.GetKeyDown(KeyCode.K))
@@ -80,7 +81,7 @@ public class Prot : MonoBehaviour
                 PUNCH.GetComponent<AudioSource>().Play();
 
             }
-
+         
 
             leProtagAnim.ChangeAnimState("Idle");
         }
