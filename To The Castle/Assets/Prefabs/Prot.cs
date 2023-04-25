@@ -24,6 +24,10 @@ public class Prot : MonoBehaviour
 
     public float currX;
 
+    public float health = 5;
+
+    public float maxHealth;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,14 +41,18 @@ public class Prot : MonoBehaviour
     void FixedUpdate()
     {
 
-        run();
-         if (hB.localScale.x < 0 || hB.localScale.x == 0)
+        
+         if (hB.localScale.x <= 0)
         {
             hB.localScale = new Vector3(0f, 1f, 1f);
 
             leProtagAnim.ChangeAnimState("Protag_0_Health");
-            leProtagAnim.ChangeAnimState("Protag_0_Health_On_Floor");
+           // leProtagAnim.ChangeAnimState("Protag_0_Health_On_Floor");
 
+        }
+        else
+        {
+            run();
         }
 
     }

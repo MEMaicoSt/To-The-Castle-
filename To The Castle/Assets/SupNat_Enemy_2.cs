@@ -50,15 +50,14 @@ public class SupNat_Enemy_2 : MonoBehaviour
         if (Protag.transform.position.x >= supEn2.transform.position.x - 20.0f)
         {
             
-
            //If the protagonist is close enough, summon bats to attack the protagonist.
             if (Protag.transform.position.x <= supEn2.transform.position.x - 14.0f )
             {
                 
-
                 leEnAnim.ChangeAnimState("Supernatural_Enemy_2_Sp_Att");
                 bSummon.BatAttack();
             }
+           
            
 
             leEnAnim.ChangeAnimState("Supernatural_Enemy_2_Run");
@@ -80,7 +79,9 @@ public class SupNat_Enemy_2 : MonoBehaviour
         else
         {
           
-            leEnAnim.ChangeAnimState("Supernatural_Enemy_2_Idle");
+
+            leEnAnim.ChangeAnimState("Supernatural_Enemy_2_Idle"); 
+           
         }
 
     }
