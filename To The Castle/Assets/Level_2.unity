@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 211039233}
   - component: {fileID: 211039235}
   - component: {fileID: 211039236}
+  - component: {fileID: 211039237}
   m_Layer: 0
   m_Name: Supernatural_Enemy_2
   m_TagString: Untagged
@@ -290,6 +291,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 885e3ee53d8189b4ebbe5f2146a6fe78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blue: {fileID: 0}
+  leEnAnim: {fileID: 0}
+  Protag: {fileID: 0}
+--- !u!114 &211039237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211039230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e29e083f7f11604cbdf915067d8dba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enAnim: {fileID: 211039235}
+  currState: SupNat2Idle
 --- !u!1 &272721060
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,7 +385,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 272721060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.5, y: 30.3, z: -3.220482}
+  m_LocalPosition: {x: -67.7, y: 13, z: -3.220482}
   m_LocalScale: {x: 22.1757, y: 31.712397, z: 2.6705}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1475,7 +1493,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717339777}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 28.6, z: -1.310936}
+  m_LocalPosition: {x: -67, y: 20.9, z: -1.310936}
   m_LocalScale: {x: 5.0049906, y: 5.03268, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1867,6 +1885,8 @@ MonoBehaviour:
   leProtagAnim: {fileID: 1944538329}
   hB: {fileID: 0}
   currX: 0
+  health: 5
+  maxHealth: 0
 --- !u!95 &1944538328
 Animator:
   serializedVersion: 5
