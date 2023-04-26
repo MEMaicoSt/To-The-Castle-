@@ -12,7 +12,6 @@ public class Enemy : MonoBehaviour
 
     float enRunSpeed = 15.0f;
 
-    int ranAtt;
 
     public Enemy_1_Anim_Changer leEnAnim;
 
@@ -20,7 +19,7 @@ public class Enemy : MonoBehaviour
 
    
 
-   // int health;
+    int health;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +28,7 @@ public class Enemy : MonoBehaviour
         eSpR = GetComponent<SpriteRenderer>();
 
         
-       // health = 100;
+        health = 100;
 
     }
 
@@ -80,12 +79,10 @@ public class Enemy : MonoBehaviour
         if (hit.gameObject.tag == "Player") {
 
 
-            Debug.Log("Collided with Player.");
+          leEnAnim.ChangeAnimState("Enemy_1_Kick");
 
-                leEnAnim.ChangeAnimState("Enemy_1_Kick");
-
-            
-               // leEnAnim.ChangeAnimState("Enemy_1_Punch");
+            //if player is throwing punches or kicking, lower the enemy's health by 10 
+            health -= 10;
            
 
         }

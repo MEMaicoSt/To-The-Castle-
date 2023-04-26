@@ -51,7 +51,7 @@ public class SupNat_Enemy_2 : MonoBehaviour
         {
             
            //If the protagonist is close enough, summon bats to attack the protagonist.
-            if (Protag.transform.position.x <= supEn2.transform.position.x - 14.0f )
+            if (Protag.transform.position.x <= supEn2.transform.position.x - 15.0f )
             {
                 
                 bSummon.BatAttack();
