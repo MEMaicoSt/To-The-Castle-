@@ -12,11 +12,13 @@ public class Enemy : MonoBehaviour
 
     float enRunSpeed = 15.0f;
 
-   
+    int ranAtt;
 
     public Enemy_1_Anim_Changer leEnAnim;
 
     public GameObject Protag;
+
+   
 
    // int health;
 
@@ -47,7 +49,11 @@ public class Enemy : MonoBehaviour
         //If the protagonist gets close, run towards her.
         if(Protag.transform.position.x >= en.transform.position.x - 20.0f)
         {
+
+            
            
+
+
             leEnAnim.ChangeAnimState("Enemy_1_Running");
             transform.position = Vector2.MoveTowards(new Vector2(en.transform.position.x, en.transform.position.y), new Vector2(Protag.transform.position.x,Protag.transform.position.y), enRunSpeed*Time.fixedDeltaTime);
 
@@ -67,11 +73,31 @@ public class Enemy : MonoBehaviour
        
     }
 
-
-    //references:
-    //https://www.google.com/search?q=how+do+you+get+the+position+of+a+game+object&rlz=1C1CHBF_enUS894US894&oq=how+do+you+get+the+position+of+a+game+object&aqs=chrome..69i57j33i10i160l2.7960j0j7&sourceid=chrome&ie=UTF-8
-    //https://docs.unity3d.com/ScriptReference/Vector2.MoveTowards.html
+    void OnCollisionEnter2D(Collision2D hit)
+    {
 
 
+        if (hit.gameObject.tag == "Player") {
 
-}
+
+            Debug.Log("Collided with Player.");
+
+                leEnAnim.ChangeAnimState("Enemy_1_Kick");
+
+            
+               // leEnAnim.ChangeAnimState("Enemy_1_Punch");
+           
+
+        }
+
+
+
+    }
+
+
+        //references:
+        //https://www.google.com/search?q=how+do+you+get+the+position+of+a+game+object&rlz=1C1CHBF_enUS894US894&oq=how+do+you+get+the+position+of+a+game+object&aqs=chrome..69i57j33i10i160l2.7960j0j7&sourceid=chrome&ie=UTF-8
+        //https://docs.unity3d.com/ScriptReference/Vector2.MoveTowards.html
+
+
+    }

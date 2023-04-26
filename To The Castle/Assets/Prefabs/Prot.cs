@@ -57,6 +57,7 @@ public class Prot : MonoBehaviour
 
     }
 
+
     void run()
     {
         thisWaythisSpeed = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical") * Time.fixedDeltaTime * runSpeed);
@@ -86,14 +87,14 @@ public class Prot : MonoBehaviour
         else 
         {
              if (Input.GetKeyDown(KeyCode.K))
-             {
-              leProtagAnim.ChangeAnimState("Kick");
-               KICK.GetComponent<AudioSource>().Play();
+            {
+                leProtagAnim.ChangeAnimState("Kick");
+                KICK.GetComponent<AudioSource>().Play();
 
             }
-             if (Input.GetKeyDown(KeyCode.P))
-             {
-              leProtagAnim.ChangeAnimState("Protag_Punch");
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                leProtagAnim.ChangeAnimState("Protag_Punch");
                 PUNCH.GetComponent<AudioSource>().Play();
 
             }
@@ -126,9 +127,17 @@ public class Prot : MonoBehaviour
 
         }
 
-        if((hit.gameObject.tag == "Enemy" || hit.gameObject.tag == "Supernatural_Enemy")  && Input.GetKeyDown(KeyCode.K))
+
+        /*if (hit.gameObject.tag == "Enemy")
+        {
+            Debug.Log("Collided with enemy");
+        }
+        */
+
+        if ((hit.gameObject.tag == "Enemy" || hit.gameObject.tag == "Supernatural_Enemy")  && Input.GetKeyDown(KeyCode.K))
         {
             KICK.GetComponent<AudioSource>().Play();
+            
             
         }
 
