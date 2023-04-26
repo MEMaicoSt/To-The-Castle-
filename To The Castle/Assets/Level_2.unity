@@ -291,9 +291,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 885e3ee53d8189b4ebbe5f2146a6fe78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blue: {fileID: 0}
-  leEnAnim: {fileID: 0}
-  Protag: {fileID: 0}
+  blue: {fileID: 211039230}
+  leEnAnim: {fileID: 211039237}
+  Protag: {fileID: 1944538322}
+  fgo: {fileID: 852632655}
+  zap: {fileID: 272721063}
 --- !u!114 &211039237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,6 +320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 272721062}
   - component: {fileID: 272721061}
+  - component: {fileID: 272721063}
   m_Layer: 0
   m_Name: LightningBolt
   m_TagString: LightningBolt
@@ -392,6 +395,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &272721063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272721060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc20f1e4068f7524484864c3e0519ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &383483848
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,6 +706,7 @@ GameObject:
   m_Component:
   - component: {fileID: 852632654}
   - component: {fileID: 852632653}
+  - component: {fileID: 852632655}
   m_Layer: 0
   m_Name: Flamingo
   m_TagString: Flamingo
@@ -765,6 +781,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &852632655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852632652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba23f72cedf31f14187a6d99444e5b1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &886272688
 GameObject:
   m_ObjectHideFlags: 0

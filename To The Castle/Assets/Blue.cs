@@ -16,7 +16,9 @@ public class Blue : MonoBehaviour
 
     public GameObject Protag;
 
-   
+    public Flamingo fgo;
+
+    public LightningBolt zap;
 
 
     // Start is called before the first frame update
@@ -44,8 +46,23 @@ public class Blue : MonoBehaviour
         if (Protag.transform.position.x >= blue.transform.position.x - 20.0f)
         {
 
-            
+            if (Protag.transform.position.y >= 8.7f)
+            {
+                //summon the giant bird that will fly toward the protagonist and lower her health
+                
+            }
 
+            //if the protagonist is at a certain distance, summon a lightning bolt to come towards her
+            if (Protag.transform.position.x <= blue.transform.position.x - 14.0f)
+            {
+
+            }
+
+            //if the Protagonist is close enough, start kicking
+            if (Protag.transform.position.x <= blue.transform.position.x - 8.0f)
+            {
+
+            }
 
 
             leEnAnim.ChangeAnimState("");

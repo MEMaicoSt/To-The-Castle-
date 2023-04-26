@@ -1224,8 +1224,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474248906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8, y: -7.33, z: 0}
-  m_LocalScale: {x: 6.1466565, y: 1.4336, z: 1}
+  m_LocalPosition: {x: 1.9113, y: -7.33, z: 0}
+  m_LocalScale: {x: 7.0682406, y: 1.4336, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1363,7 +1363,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.85, y: 0.2, z: -10}
+  m_LocalPosition: {x: 0.75, y: 0.2, z: -10}
   m_LocalScale: {x: 0.45192504, y: 0.47929007, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2963,7 +2963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.46925062, g: 0.8962264, b: 0.64501286, a: 1}
+  m_Color: {r: 0.48776254, g: 0.9150943, b: 0.6602635, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3306,7 +3306,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1957052674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.4, y: -3.2064, z: -3.2311}
+  m_LocalPosition: {x: -33.8, y: -3.2064, z: -3.2311}
   m_LocalScale: {x: 7.857804, y: 7.5483294, z: 0.9985371}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3357,6 +3357,8 @@ MonoBehaviour:
   leProtagAnim: {fileID: 1957052681}
   hB: {fileID: 1700821625}
   currX: 0
+  health: 5
+  maxHealth: 0
 --- !u!50 &1957052679
 Rigidbody2D:
   serializedVersion: 4
