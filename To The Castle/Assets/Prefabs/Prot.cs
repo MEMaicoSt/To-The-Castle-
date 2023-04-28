@@ -24,16 +24,18 @@ public class Prot : MonoBehaviour
 
     public float currX;
 
-    public float health = 5;
-
-    public float maxHealth;
+    public Text shieldEquip;
 
     // Start is called before the first frame update
     void Start()
     {
         pRB = GetComponent<Rigidbody2D>();
         prSpR = GetComponent<SpriteRenderer>();
+
         hB.localScale = new Vector3(1f, 1f, 1f);
+
+       
+        shieldEquip.text = "Shield Equipped: 0";
  
     }
 
@@ -47,7 +49,7 @@ public class Prot : MonoBehaviour
             hB.localScale = new Vector3(0f, 1f, 1f);
 
             leProtagAnim.ChangeAnimState("Protag_0_Health");
-           // leProtagAnim.ChangeAnimState("Protag_0_Health_On_Floor");
+           
 
         }
         else
@@ -89,17 +91,19 @@ public class Prot : MonoBehaviour
              if (Input.GetKeyDown(KeyCode.K))
             {
                 leProtagAnim.ChangeAnimState("Kick");
+                
                 KICK.GetComponent<AudioSource>().Play();
 
             }
             if (Input.GetKeyDown(KeyCode.P))
             {
                 leProtagAnim.ChangeAnimState("Protag_Punch");
+                
                 PUNCH.GetComponent<AudioSource>().Play();
 
             }
-         
 
+            
             leProtagAnim.ChangeAnimState("Idle");
         }
 
@@ -127,24 +131,21 @@ public class Prot : MonoBehaviour
 
         }
 
-
-        /*if (hit.gameObject.tag == "Enemy")
+        if(hit.gameObject.tag == "Shield")
         {
-            Debug.Log("Collided with enemy");
-        }
-        */
-
-        if ((hit.gameObject.tag == "Enemy" || hit.gameObject.tag == "Supernatural_Enemy")  && Input.GetKeyDown(KeyCode.K))
-        {
-            KICK.GetComponent<AudioSource>().Play();
-            
-            
+            Destroy(hit.gameObject);
+            temporaryShieldEquip();
         }
 
-        if ((hit.gameObject.tag == "Enemy" || hit.gameObject.tag == "Supernatural_Enemy")  && Input.GetKeyDown(KeyCode.P))
+
+        if ((hit.gameObject.tag == "Enemy" || hit.gameObject.tag == "Supernatural_Enemy") && shieldEquip.text != "Shield Equipped: 1")
         {
-            PUNCH.GetComponent<AudioSource>().Play();
+
+            hB.localScale = new Vector3((hB.localScale.x - 0.01f), 1f, 1f);
+
         }
+
+       
 
         if(hit.gameObject.tag == "Bat")
         {
@@ -158,10 +159,30 @@ public class Prot : MonoBehaviour
 
     }
 
+    
+     void temporaryShieldEquip(){
+     
+     StartCoroutine(temporaryShieldEquipRoutine());
+     
+      IEnumerator temporaryShieldEquipRoutine(){   
+
+        yield return new WaitForSeconds(0.1f);
+
+       shieldEquip.text = "Shield Equipped: 1";
+
+        yield return new WaitForSeconds(20f);
+
+        shieldEquip.text = "Shield Equipped: 0";
+
+
+     }
+     }
+
+     
     //references:
     //https://docs.unity3d.com/ScriptReference/Collider.OnCollisionEnter.html
     //https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnCollisionEnter2D.html
     //https://www.youtube.com/watch?v=QRp4V1JTZnM
     //https://docs.unity3d.com/ScriptReference/AudioSource.Play.html
-    
+
 }

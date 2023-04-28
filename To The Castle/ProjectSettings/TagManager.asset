@@ -11,6 +11,7 @@ TagManager:
   - Bat
   - LightningBolt
   - Flamingo
+  - Shield
   layers:
   - Default
   - TransparentFX
