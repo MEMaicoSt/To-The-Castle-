@@ -155,7 +155,7 @@ public class Prot : MonoBehaviour
 
         if(hit.gameObject.tag == "Supernatural_Enemy" && shieldEquip.text != "Shield Equipped: 1")
         {
-            hB.localScale = new Vector3((hB.localScale.x - 0.07f), 1f, 1f);
+            hB.localScale = new Vector3((hB.localScale.x - 0.045f), 1f, 1f);
         }
 
 
