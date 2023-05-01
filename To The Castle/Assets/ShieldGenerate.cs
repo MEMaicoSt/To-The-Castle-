@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShieldGenerate : MonoBehaviour
 {
     public GameObject sHield;
+    public GameObject Protag;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,7 @@ public class ShieldGenerate : MonoBehaviour
             while (true)
             {
                 yield return new WaitForSeconds(8f);
-                GameObject shiEld = Instantiate(sHield, (new Vector2(Random.Range(-33.8f,14.52f), -3.2064f)), Quaternion.identity);
+                GameObject shiEld = Instantiate(sHield, (new Vector2(Random.Range(Protag.transform.position.x - 5.0f, Protag.transform.position.x + 3.6f), -3.2064f)), Quaternion.identity);
 
                 Destroy(shiEld, 9);
 

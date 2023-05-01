@@ -547,6 +547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   en2: {fileID: 267759302}
+  protagHasShield: {fileID: 318365606}
   leEn2Anim: {fileID: 267759307}
   Protag: {fileID: 1957052674}
 --- !u!95 &267759309
@@ -740,6 +741,7 @@ MonoBehaviour:
   en: {fileID: 274187852}
   leEnAnim: {fileID: 274187859}
   Protag: {fileID: 1957052674}
+  protagHasShield: {fileID: 318365606}
 --- !u!114 &274187859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1092,6 +1094,7 @@ MonoBehaviour:
   leEnAnim: {fileID: 397672798}
   Protag: {fileID: 1957052674}
   bSummon: {fileID: 884019497}
+  protagHasShield: {fileID: 318365606}
 --- !u!114 &397672798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1582,7 +1585,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!1 &532708464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2405,6 +2408,7 @@ MonoBehaviour:
   en: {fileID: 762282379}
   leEnAnim: {fileID: 762282380}
   Protag: {fileID: 1957052674}
+  protagHasShield: {fileID: 0}
 --- !u!95 &762282382
 Animator:
   serializedVersion: 5
@@ -2855,6 +2859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   en2: {fileID: 1326912696}
+  protagHasShield: {fileID: 0}
   leEn2Anim: {fileID: 1326912698}
   Protag: {fileID: 1957052674}
 --- !u!50 &1326912700
@@ -3001,6 +3006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sHield: {fileID: 588395923}
+  Protag: {fileID: 1957052674}
 --- !u!4 &1349093286
 Transform:
   m_ObjectHideFlags: 0
@@ -3147,6 +3153,7 @@ MonoBehaviour:
   en: {fileID: 1695280050}
   leEnAnim: {fileID: 1695280051}
   Protag: {fileID: 1957052674}
+  protagHasShield: {fileID: 0}
 --- !u!95 &1695280053
 Animator:
   serializedVersion: 5
@@ -3742,7 +3749,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 4
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 50

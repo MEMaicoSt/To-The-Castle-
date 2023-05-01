@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SupNat_Enemy_2 : MonoBehaviour
 {
@@ -18,9 +19,10 @@ public class SupNat_Enemy_2 : MonoBehaviour
 
     public BatSummoner bSummon;
 
+    public Text protagHasShield;
 
+    float health;
 
-    // int health;
 
     // Start is called before the first frame update
     void Start()
@@ -28,8 +30,7 @@ public class SupNat_Enemy_2 : MonoBehaviour
         supEn2RB = GetComponent<Rigidbody2D>();
         se2SpR = GetComponent<SpriteRenderer>();
 
-
-        // health = 100;
+         health = 1.0f;
 
     }
 
@@ -51,7 +52,7 @@ public class SupNat_Enemy_2 : MonoBehaviour
         {
             
            //If the protagonist is close enough, summon bats to attack the protagonist.
-            if (Protag.transform.position.x <= supEn2.transform.position.x - 15.0f )
+            if (Protag.transform.position.x <= supEn2.transform.position.x - 12.0f )
             {
                 
                 bSummon.BatAttack();
@@ -83,6 +84,33 @@ public class SupNat_Enemy_2 : MonoBehaviour
             leEnAnim.ChangeAnimState("Supernatural_Enemy_2_Idle"); 
            
         }
+
+    }
+
+
+    void OnCollisionEnter2D(Collision2D hit)
+    {
+        //If the player collides with you, and she has a shield equipped, you'll take more damage
+        if (hit.gameObject.tag == "Player")
+        {
+            if (protagHasShield.text == "Shield Equipped: 1")
+            {
+                health -= 0.04f;
+            }
+
+            else
+            {
+                health -= 0.01f;
+            }
+        }
+        //if the enemy is kicked by the player
+        if (hit.gameObject.tag == "hit")
+        {
+            Destroy(hit.gameObject);
+            health -= 0.03f;
+        }
+
+
 
     }
 

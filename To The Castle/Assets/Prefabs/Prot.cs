@@ -53,7 +53,10 @@ public class Prot : MonoBehaviour
             hB.localScale = new Vector3(0f, 1f, 1f);
 
             leProtagAnim.ChangeAnimState("Protag_0_Health");
-           
+
+            pRB.constraints = RigidbodyConstraints2D.FreezePositionX;
+
+
 
         }
         else
@@ -143,16 +146,20 @@ public class Prot : MonoBehaviour
         }
 
 
-        if ((hit.gameObject.tag == "Enemy" || hit.gameObject.tag == "Supernatural_Enemy") && shieldEquip.text != "Shield Equipped: 1")
+        if ((hit.gameObject.tag == "Enemy") && shieldEquip.text != "Shield Equipped: 1")
         {
 
             hB.localScale = new Vector3((hB.localScale.x - 0.01f), 1f, 1f);
 
         }
 
-       
+        if(hit.gameObject.tag == "Supernatural_Enemy" && shieldEquip.text != "Shield Equipped: 1")
+        {
+            hB.localScale = new Vector3((hB.localScale.x - 0.07f), 1f, 1f);
+        }
 
-        if(hit.gameObject.tag == "Bat")
+
+        if (hit.gameObject.tag == "Bat")
         {
             Destroy(hit.gameObject);
 
@@ -163,7 +170,6 @@ public class Prot : MonoBehaviour
 
 
     }
-
     
      void temporaryShieldEquip(){
      

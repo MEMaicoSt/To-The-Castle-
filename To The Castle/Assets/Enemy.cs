@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -38,6 +39,8 @@ public class Enemy : MonoBehaviour
         if (health <= 0.0f)
         {
              leEnAnim.ChangeAnimState("Enemy_1_0_Health");
+            eRB.constraints = RigidbodyConstraints2D.FreezePositionX;
+            
         }
         else
         {
@@ -79,11 +82,12 @@ public class Enemy : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D hit)
     {
+        //If the player collides with you, and she has a shield equipped, you'll take more damage
         if(hit.gameObject.tag == "Player")
         {
-           if(protagHasShield.text = "Shield Equipped: 1")
+           if(protagHasShield.text == "Shield Equipped: 1")
             {
-                health -= 0.04f;
+                health -= 0.08f;
             }
 
             else
@@ -95,7 +99,7 @@ public class Enemy : MonoBehaviour
         if(hit.gameObject.tag == "hit")
         {
             Destroy(hit.gameObject);
-            health -= 0.07f;
+            health -= 0.06f;
         }
 
 
@@ -103,9 +107,9 @@ public class Enemy : MonoBehaviour
     }
 
 
-        //references:
-        //https://www.google.com/search?q=how+do+you+get+the+position+of+a+game+object&rlz=1C1CHBF_enUS894US894&oq=how+do+you+get+the+position+of+a+game+object&aqs=chrome..69i57j33i10i160l2.7960j0j7&sourceid=chrome&ie=UTF-8
-        //https://docs.unity3d.com/ScriptReference/Vector2.MoveTowards.html
+    //references:
+    //https://www.google.com/search?q=how+do+you+get+the+position+of+a+game+object&rlz=1C1CHBF_enUS894US894&oq=how+do+you+get+the+position+of+a+game+object&aqs=chrome..69i57j33i10i160l2.7960j0j7&sourceid=chrome&ie=UTF-8
+    //https://docs.unity3d.com/ScriptReference/Vector2.MoveTowards.html
+    // https://answers.unity.com/questions/810742/freeze-position-in-2d.html
 
-
-    }
+}

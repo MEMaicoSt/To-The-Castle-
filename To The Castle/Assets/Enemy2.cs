@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy2 : MonoBehaviour
 {
@@ -12,13 +13,13 @@ public class Enemy2 : MonoBehaviour
 
     float en2RunSpeed = 15.0f;
 
-
+    public Text protagHasShield;
 
     public En2AnimChanger leEn2Anim;
 
     public GameObject Protag;
 
-    // int health;
+    float health;
 
     // Start is called before the first frame update
     void Start()
@@ -27,16 +28,22 @@ public class Enemy2 : MonoBehaviour
         e2SpR = GetComponent<SpriteRenderer>();
 
 
-        // health = 100;
+         health = 1.0f;
 
     }
 
 
     void FixedUpdate()
     {
-
-        en2run();
-
+        if (health <= 0.0f)
+        {
+            leEn2Anim.ChangeAnimState("Enemy2_0_Health");
+            e2RB.constraints = RigidbodyConstraints2D.FreezePositionX;
+        }
+        else
+        {
+            en2run();
+        }
     }
 
     void en2run()
@@ -64,6 +71,32 @@ public class Enemy2 : MonoBehaviour
         {
             leEn2Anim.ChangeAnimState("Enemy2Idle");
         }
+
+    }
+
+    void OnCollisionEnter2D(Collision2D hit)
+    {
+        //If the player collides with you, and she has a shield equipped, you'll take more damage
+        if (hit.gameObject.tag == "Player")
+        {
+            if (protagHasShield.text == "Shield Equipped: 1")
+            {
+                health -= 0.08f;
+            }
+
+            else
+            {
+                health -= 0.02f;
+            }
+        }
+        //if the enemy is kicked by the player
+        if (hit.gameObject.tag == "hit")
+        {
+            Destroy(hit.gameObject);
+            health -= 0.06f;
+        }
+
+
 
     }
 }
