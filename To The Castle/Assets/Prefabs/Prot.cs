@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Prot : MonoBehaviour
 {
@@ -28,7 +29,11 @@ public class Prot : MonoBehaviour
 
     public GameObject hit;
 
+    public GameObject hitPunch;
+
     public GameObject myProtag;
+
+    public BoxCollider2D passThru;
 
     // Start is called before the first frame update
     void Start()
@@ -54,8 +59,8 @@ public class Prot : MonoBehaviour
 
             leProtagAnim.ChangeAnimState("Protag_0_Health");
 
-            pRB.constraints = RigidbodyConstraints2D.FreezePositionX;
-
+            pRB.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+            passThru.isTrigger = true;
 
 
         }
@@ -108,7 +113,7 @@ public class Prot : MonoBehaviour
                 leProtagAnim.ChangeAnimState("Protag_Punch");
                 
                 PUNCH.GetComponent<AudioSource>().Play();
-
+                GameObject hitp = Instantiate(hitPunch, (new Vector2(myProtag.transform.position.x + 1, myProtag.transform.position.y + 1.6f)), Quaternion.identity);
             }
 
             
@@ -168,6 +173,12 @@ public class Prot : MonoBehaviour
             hB.localScale = new Vector3(currX, 1f, 1f);
         }
 
+
+        if(hit.gameObject.tag == "Finish_Flag")
+        {
+            Destroy(hit.gameObject);
+            SceneManager.LoadScene("Level_2");
+        }
 
     }
     

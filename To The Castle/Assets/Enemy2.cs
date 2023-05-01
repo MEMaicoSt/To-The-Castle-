@@ -19,6 +19,9 @@ public class Enemy2 : MonoBehaviour
 
     public GameObject Protag;
 
+    public BoxCollider2D passThru;
+
+
     float health;
 
     // Start is called before the first frame update
@@ -39,6 +42,7 @@ public class Enemy2 : MonoBehaviour
         {
             leEn2Anim.ChangeAnimState("Enemy2_0_Health");
             e2RB.constraints = RigidbodyConstraints2D.FreezePositionX;
+            passThru.isTrigger = true;
         }
         else
         {
@@ -76,6 +80,12 @@ public class Enemy2 : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D hit)
     {
+
+        if (hit.gameObject.tag == "taiyaki" || hit.gameObject.tag == "dragonfruit")
+        {
+            Destroy(hit.gameObject);
+        }
+
         //If the player collides with you, and she has a shield equipped, you'll take more damage
         if (hit.gameObject.tag == "Player")
         {
@@ -96,7 +106,12 @@ public class Enemy2 : MonoBehaviour
             health -= 0.06f;
         }
 
-
+        //if the enemy is punched by the player
+        if (hit.gameObject.tag == "hitpunch")
+        {
+            Destroy(hit.gameObject);
+            health -= 0.07f;
+        }
 
     }
 }

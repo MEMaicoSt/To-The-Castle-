@@ -23,6 +23,8 @@ public class SupNat_Enemy_2 : MonoBehaviour
 
     float health;
 
+    public BoxCollider2D passThru;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,9 +39,17 @@ public class SupNat_Enemy_2 : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (health <= 0.0f)
+        {
+            leEnAnim.ChangeAnimState("Suoernatural_Enemy_2_0_Health");
+            supEn2RB.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
 
-        supEn2run();
-
+            passThru.isTrigger = true;
+        }
+        else
+        {
+            supEn2run();
+        }
     }
 
     void supEn2run()
@@ -90,12 +100,24 @@ public class SupNat_Enemy_2 : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D hit)
     {
+
+        if (hit.gameObject.tag == "taiyaki" || hit.gameObject.tag == "dragonfruit")
+        {
+            Destroy(hit.gameObject);
+            health += 0.08f;
+
+            if (health >= 1.0f)
+            {
+                health = 1.0f;
+            }
+        }
+
         //If the player collides with you, and she has a shield equipped, you'll take more damage
         if (hit.gameObject.tag == "Player")
         {
             if (protagHasShield.text == "Shield Equipped: 1")
             {
-                health -= 0.04f;
+                health -= 0.05f;
             }
 
             else
@@ -110,7 +132,12 @@ public class SupNat_Enemy_2 : MonoBehaviour
             health -= 0.03f;
         }
 
-
+        //if the enemy is punched by the player
+        if (hit.gameObject.tag == "hitpunch")
+        {
+            Destroy(hit.gameObject);
+            health -= 0.04f;
+        }
 
     }
 

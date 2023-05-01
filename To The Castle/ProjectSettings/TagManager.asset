@@ -13,6 +13,8 @@ TagManager:
   - Flamingo
   - Shield
   - hit
+  - hitpunch
+  - Finish_Flag
   layers:
   - Default
   - TransparentFX
