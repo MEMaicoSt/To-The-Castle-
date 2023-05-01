@@ -17,9 +17,9 @@ public class Enemy : MonoBehaviour
 
     public GameObject Protag;
 
-   
+    public Text protagHasShield;
 
-    int health;
+    float health;
 
     // Start is called before the first frame update
     void Start()
@@ -28,16 +28,21 @@ public class Enemy : MonoBehaviour
         eSpR = GetComponent<SpriteRenderer>();
 
         
-        health = 100;
+        health = 1.0f;
 
     }
 
 
     void FixedUpdate()
     {
-
-        enrun();
-
+        if (health <= 0.0f)
+        {
+             leEnAnim.ChangeAnimState("Enemy_1_0_Health");
+        }
+        else
+        {
+            enrun();
+        }
     }
 
     void enrun()
@@ -74,17 +79,23 @@ public class Enemy : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D hit)
     {
+        if(hit.gameObject.tag == "Player")
+        {
+           if(protagHasShield.text = "Shield Equipped: 1")
+            {
+                health -= 0.04f;
+            }
 
-
-        if (hit.gameObject.tag == "Player") {
-
-
-          leEnAnim.ChangeAnimState("Enemy_1_Kick");
-
-            //if player is throwing punches or kicking, lower the enemy's health by 10 
-            health -= 10;
-           
-
+            else
+            {
+                health -= 0.02f;
+            }
+        }
+        //if the enemy is kicked by the player
+        if(hit.gameObject.tag == "hit")
+        {
+            Destroy(hit.gameObject);
+            health -= 0.07f;
         }
 
 

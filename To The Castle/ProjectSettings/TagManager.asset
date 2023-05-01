@@ -12,6 +12,7 @@ TagManager:
   - LightningBolt
   - Flamingo
   - Shield
+  - hit
   layers:
   - Default
   - TransparentFX

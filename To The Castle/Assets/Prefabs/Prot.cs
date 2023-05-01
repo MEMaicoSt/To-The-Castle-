@@ -26,6 +26,10 @@ public class Prot : MonoBehaviour
 
     public Text shieldEquip;
 
+    public GameObject hit;
+
+    public GameObject myProtag;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -93,6 +97,7 @@ public class Prot : MonoBehaviour
                 leProtagAnim.ChangeAnimState("Kick");
                 
                 KICK.GetComponent<AudioSource>().Play();
+                GameObject hiT = Instantiate(hit, (new Vector2(myProtag.transform.position.x + 1, myProtag.transform.position.y+1)), Quaternion.identity);
 
             }
             if (Input.GetKeyDown(KeyCode.P))
