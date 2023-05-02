@@ -186,6 +186,12 @@ public class Prot : MonoBehaviour
             SceneManager.LoadScene("Level_2");
         }
 
+        if (hit.gameObject.tag == "Finish_Flag2")
+        {
+            Destroy(hit.gameObject);
+            SceneManager.LoadScene("Level_3");
+        }
+
 
     }
     

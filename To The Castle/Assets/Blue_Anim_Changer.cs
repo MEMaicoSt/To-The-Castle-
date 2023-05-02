@@ -6,14 +6,14 @@ public class Blue_Anim_Changer : MonoBehaviour
 {
     public Animator enAnim;
 
-    public string currState = "SupNat2Idle";
+    public string currState = "Blue_Idle";
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        ChangeAnimState("SupNat2Idle");
+        ChangeAnimState("Blue_Idle");
     }
 
 

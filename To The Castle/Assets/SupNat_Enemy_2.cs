@@ -41,7 +41,7 @@ public class SupNat_Enemy_2 : MonoBehaviour
     {
         if (health <= 0.0f)
         {
-            leEnAnim.ChangeAnimState("Suoernatural_Enemy_2_0_Health");
+            leEnAnim.ChangeAnimState("Supernatural_Enemy_2_0_Health");
             supEn2RB.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
 
             passThru.isTrigger = true;

@@ -21,8 +21,8 @@ public class ShieldGenerate : MonoBehaviour
         {
             while (true)
             {
-                yield return new WaitForSeconds(8f);
-                GameObject shiEld = Instantiate(sHield, (new Vector2(Random.Range(Protag.transform.position.x - 5.0f, Protag.transform.position.x + 3.6f), -3.2064f)), Quaternion.identity);
+                yield return new WaitForSeconds(4f);
+                GameObject shiEld = Instantiate(sHield, (new Vector2(Random.Range(Protag.transform.position.x - 2.5f, Protag.transform.position.x + 3.6f), -3.2064f)), Quaternion.identity);
 
                 Destroy(shiEld, 9);
 
