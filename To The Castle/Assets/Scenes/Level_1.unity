@@ -784,7 +784,7 @@ GameObject:
   - component: {fileID: 267759308}
   - component: {fileID: 267759307}
   - component: {fileID: 267759309}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1504,7 +1504,7 @@ GameObject:
   - component: {fileID: 397672798}
   - component: {fileID: 397672800}
   - component: {fileID: 397672799}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Supernatural_Enemy_2
   m_TagString: Supernatural_Enemy
   m_Icon: {fileID: 0}
@@ -4097,7 +4097,7 @@ GameObject:
   - component: {fileID: 1326912699}
   - component: {fileID: 1326912698}
   - component: {fileID: 1326912697}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy2 (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}

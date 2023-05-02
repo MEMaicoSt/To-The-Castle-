@@ -173,12 +173,19 @@ public class Prot : MonoBehaviour
             hB.localScale = new Vector3(currX, 1f, 1f);
         }
 
+        if(hit.gameObject.tag == "LightningBolt")
+        {
+            Destroy(hit.gameObject);
+
+        }
+
 
         if(hit.gameObject.tag == "Finish_Flag")
         {
             Destroy(hit.gameObject);
             SceneManager.LoadScene("Level_2");
         }
+
 
     }
     

@@ -41,7 +41,7 @@ public class Enemy2 : MonoBehaviour
         if (health <= 0.0f)
         {
             leEn2Anim.ChangeAnimState("Enemy2_0_Health");
-            e2RB.constraints = RigidbodyConstraints2D.FreezePositionX;
+            e2RB.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
             passThru.isTrigger = true;
         }
         else
