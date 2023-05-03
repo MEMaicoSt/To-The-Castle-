@@ -83,6 +83,7 @@ public class Enemy2 : MonoBehaviour
         if (hit.gameObject.tag == "taiyaki" || hit.gameObject.tag == "dragonfruit")
         {
             Destroy(hit.gameObject);
+            health += 0.01f;
         }
 
         //If the player collides with you, and she has a shield equipped, you'll take more damage
@@ -95,7 +96,7 @@ public class Enemy2 : MonoBehaviour
 
             else
             {
-                health -= 0.01f;
+                health -= 0.002f;
             }
         }
         //if the enemy is kicked by the player
