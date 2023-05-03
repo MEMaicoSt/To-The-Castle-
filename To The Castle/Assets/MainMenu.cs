@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public Image optionsMenu;
-
+    public Image controlz;
     
     public void goToLvlScreen()
     {
@@ -23,6 +23,16 @@ public class MainMenu : MonoBehaviour
     public void mySoundOptionsMenu()
     {
         optionsMenu.gameObject.SetActive(true);
+    }
+
+    public void seeControls()
+    {
+        controlz.gameObject.SetActive(true);
+    }
+
+    public void okButton()
+    {
+        controlz.gameObject.SetActive(false);
     }
 
     //references: https://stackoverflow.com/questions/49460877/unity-image-enabled-false-does-not-work#:~:text=In%20Unity%20in%20order%20to,need%20to%20instantiate%20the%20object.
