@@ -1202,7 +1202,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1960881016}
+        m_TargetAssemblyTypeName: SoundOptions, Assembly-CSharp
+        m_MethodName: SetMusicVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &690190945
 GameObject:
   m_ObjectHideFlags: 0
@@ -1626,7 +1638,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1960881016}
+        m_TargetAssemblyTypeName: SoundOptions, Assembly-CSharp
+        m_MethodName: SetMasterVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &940568924
 GameObject:
   m_ObjectHideFlags: 0
@@ -2044,7 +2068,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1960881016}
+        m_TargetAssemblyTypeName: SoundOptions, Assembly-CSharp
+        m_MethodName: SetSFXVoume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1162090674
 GameObject:
   m_ObjectHideFlags: 0
@@ -2967,7 +3003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3e44bebf13c02149b09891d730c7898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AMix: {fileID: 0}
+  AMix: {fileID: 24100000, guid: 391bb58710343e84a9cced769cc7adbc, type: 2}
   masterVol: {fileID: 937939219}
   musicVol: {fileID: 668719928}
   sfxVol: {fileID: 1153086175}
@@ -3253,7 +3289,7 @@ AudioSource:
   m_GameObject: {fileID: 2119547191}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -8341498912534043107, guid: 391bb58710343e84a9cced769cc7adbc, type: 2}
   m_audioClip: {fileID: 8300000, guid: 5900c858e6901ad4fbb7b46590021a26, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.631
