@@ -35,6 +35,8 @@ public class Prot : MonoBehaviour
 
     public BoxCollider2D passThru;
 
+    public Text currentLvl;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +64,7 @@ public class Prot : MonoBehaviour
             pRB.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
             passThru.isTrigger = true;
 
+            tryAgains();
 
         }
         else
@@ -226,6 +229,31 @@ public class Prot : MonoBehaviour
 
      }
      }
+
+    void tryAgains()
+    {
+        StartCoroutine(tryAgainsRoutine());
+
+        IEnumerator tryAgainsRoutine()
+        {
+            yield return new WaitForSeconds(4f);
+
+            if(currentLvl.text == "Level 1")
+            {
+                SceneManager.LoadScene("TryAgain_Lvl1");
+            }
+
+            if (currentLvl.text == "Level 2")
+            {
+                SceneManager.LoadScene("TryAgain_Lvl2");
+            }
+
+            if (currentLvl.text == "Level 3")
+            {
+                SceneManager.LoadScene("TryAgain_Lvl3");
+            }
+        }
+    }
 
      
     //references:
