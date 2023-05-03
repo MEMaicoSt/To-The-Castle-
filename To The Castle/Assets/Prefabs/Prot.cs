@@ -206,10 +206,19 @@ public class Prot : MonoBehaviour
         if(hit.gameObject.tag == "Finale_Flag")
         {
             Destroy(hit.gameObject);
+            toEndingCutscene();
 
         }
 
+        if (hit.gameObject.tag == "hit")
+        {
+            Destroy(hit.gameObject);          
+        }
 
+        if (hit.gameObject.tag == "hitpunch")
+        {
+            Destroy(hit.gameObject);
+        }
     }
     
      void temporaryShieldEquip(){
@@ -252,6 +261,17 @@ public class Prot : MonoBehaviour
             {
                 SceneManager.LoadScene("TryAgain_Lvl3");
             }
+        }
+    }
+
+    void toEndingCutscene()
+    {
+        StartCoroutine(toEndingCutsceneRoutine());
+
+        IEnumerator toEndingCutsceneRoutine()
+        {
+            yield return new WaitForSeconds(4f);
+            SceneManager.LoadScene("Ending_Cutscene");
         }
     }
 

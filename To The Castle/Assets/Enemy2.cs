@@ -35,7 +35,6 @@ public class Enemy2 : MonoBehaviour
 
     }
 
-
     void FixedUpdate()
     {
         if (health <= 0.0f)
@@ -111,6 +110,16 @@ public class Enemy2 : MonoBehaviour
         {
             Destroy(hit.gameObject);
             health -= 0.07f;
+        }
+
+        if (hit.gameObject.tag == "LightningBolt")
+        {
+            Destroy(hit.gameObject);
+        }
+
+        if (hit.gameObject.tag == "Bat")
+        {
+            Destroy(hit.gameObject);
         }
 
     }

@@ -134,5 +134,15 @@ public class Blue : MonoBehaviour
             health -= 0.04f;
         }
 
+        if (hit.gameObject.tag == "LightningBolt")
+        {
+            Destroy(hit.gameObject);
+        }
+
+        if (hit.gameObject.tag == "Bat")
+        {
+            Destroy(hit.gameObject);
+        }
+
     }
 }

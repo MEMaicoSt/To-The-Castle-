@@ -139,6 +139,16 @@ public class SupNat_Enemy_2 : MonoBehaviour
             health -= 0.04f;
         }
 
+        if (hit.gameObject.tag == "LightningBolt")
+        {
+            Destroy(hit.gameObject);
+        }
+
+        if (hit.gameObject.tag == "Bat")
+        {
+            Destroy(hit.gameObject);
+        }
+
     }
 
     //Reference: https://medium.com/eincode/unity-fundamentals-moving-a-game-object-179f708c5d36#:~:text=You%20can%20change%20the%20object,transform%20property%20of%20the%20object.&text=%2C1%2C1)-,transform.,Simple%20as%20that!
