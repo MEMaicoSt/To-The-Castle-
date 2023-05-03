@@ -16,6 +16,7 @@ TagManager:
   - hitpunch
   - Finish_Flag
   - Finish_Flag2
+  - FinaleFlag
   layers:
   - Default
   - TransparentFX
