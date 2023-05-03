@@ -6,6 +6,7 @@ public class Health_Item_Generation : MonoBehaviour
 {
     public GameObject taiyaki;
     public GameObject dragonfruit;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class Health_Item_Generation : MonoBehaviour
         {
             while (true)
             {
-                yield return new WaitForSeconds(10f);
+                yield return new WaitForSeconds(5f);
                 GameObject taiYaki = Instantiate(taiyaki, (new Vector2(Random.Range(-25.30f, 29.01f), -3.206f)), Quaternion.identity);
                 GameObject dragonFruit = Instantiate(dragonfruit, (new Vector2(Random.Range(-25.30f, 29.01f), -3.206f)), Quaternion.identity);
                 Destroy(taiYaki, 10);

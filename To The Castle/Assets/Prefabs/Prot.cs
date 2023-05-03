@@ -15,7 +15,7 @@ public class Prot : MonoBehaviour
 
     SpriteRenderer prSpR;
 
-    float runSpeed = 30.0f;
+    float runSpeed = 39.0f;
 
     Vector3 thisWaythisSpeed;
 
@@ -203,7 +203,7 @@ public class Prot : MonoBehaviour
             SceneManager.LoadScene("Level_3");
         }
 
-        if(hit.gameObject.tag == "Finale_Flag")
+        if(hit.gameObject.tag == "FinaleFlag")
         {
             Destroy(hit.gameObject);
             toEndingCutscene();

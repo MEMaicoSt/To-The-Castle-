@@ -647,6 +647,7 @@ MonoBehaviour:
   Dialogue: {fileID: 804649663}
   secUntilNextChar: 0.08
   DialogueBoxLines: []
+  buttonText: {fileID: 103706726}
 --- !u!1 &1147480901
 GameObject:
   m_ObjectHideFlags: 0

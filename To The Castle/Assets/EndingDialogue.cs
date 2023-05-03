@@ -12,6 +12,8 @@ public class EndingDialogue : MonoBehaviour
 
     private int nextSent;
 
+    public Text buttonText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,8 +57,19 @@ public class EndingDialogue : MonoBehaviour
 
     public void pressNextToAdvance()
     {
+        if (buttonText.text == "The End")
+        {
+            SceneManager.LoadScene("Title_Screen");
+        }
+
         nextSent = nextSent + 1;
+        if(nextSent == 14)
+        {
+            buttonText.text = "The End";
+        }
+        else
         StartCoroutine(endingCutsceneLinesRoutine());
+
     }
 
     //references: https://www.youtube.com/watch?v=8oTYabhj248
