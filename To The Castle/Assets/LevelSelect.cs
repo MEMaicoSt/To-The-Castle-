@@ -10,6 +10,16 @@ public class LevelSelect : MonoBehaviour
         SceneManager.LoadScene("Opening_Cutscene");
     }
 
+    public void goLvl2()
+    {
+        SceneManager.LoadScene("Level_2");
+    }
+
+    public void goLvl3()
+    {
+        SceneManager.LoadScene("Level_3");
+    }
+
     public void goBack()
     {
         SceneManager.LoadScene("Title_Screen");
