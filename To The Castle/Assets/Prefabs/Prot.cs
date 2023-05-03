@@ -164,7 +164,7 @@ public class Prot : MonoBehaviour
         }
 
 
-        if (hit.gameObject.tag == "Bat")
+        if (hit.gameObject.tag == "Bat" && shieldEquip.text != "Shield Equipped: 1")
         {
             Destroy(hit.gameObject);
 
@@ -172,15 +172,23 @@ public class Prot : MonoBehaviour
 
             hB.localScale = new Vector3(currX, 1f, 1f);
         }
-
-        if(hit.gameObject.tag == "LightningBolt")
+        if (hit.gameObject.tag == "Bat" && shieldEquip.text == "Shield Equipped: 1")
         {
             Destroy(hit.gameObject);
-
         }
 
 
-        if(hit.gameObject.tag == "Finish_Flag")
+        if (hit.gameObject.tag == "LightningBolt" && shieldEquip.text != "Shield Equipped: 1")
+        {
+            Destroy(hit.gameObject);
+            hB.localScale = new Vector3((hB.localScale.x - 0.08f), 1f, 1f);
+        }
+        if (hit.gameObject.tag == "LightningBolt" && shieldEquip.text == "Shield Equipped: 1")
+        {
+            Destroy(hit.gameObject);         
+        }
+
+        if (hit.gameObject.tag == "Finish_Flag")
         {
             Destroy(hit.gameObject);
             SceneManager.LoadScene("Level_2");
@@ -190,6 +198,12 @@ public class Prot : MonoBehaviour
         {
             Destroy(hit.gameObject);
             SceneManager.LoadScene("Level_3");
+        }
+
+        if(hit.gameObject.tag == "Finale_Flag")
+        {
+            Destroy(hit.gameObject);
+
         }
 
 
