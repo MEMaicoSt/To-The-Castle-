@@ -112,26 +112,26 @@ public class Blue : MonoBehaviour
         {
             if (protagHasShield.text == "Shield Equipped: 1")
             {
-                health -= 0.05f;
+                health -= 0.01f;
             }
 
             else
             {
-                health -= 0.01f;
+                health -= 0.005f;
             }
         }
         //if the enemy is kicked by the player
         if (hit.gameObject.tag == "hit")
         {
             Destroy(hit.gameObject);
-            health -= 0.03f;
+            health -= 0.02f;
         }
 
         //if the enemy is punched by the player
         if (hit.gameObject.tag == "hitpunch")
         {
             Destroy(hit.gameObject);
-            health -= 0.04f;
+            health -= 0.01f;
         }
 
         if (hit.gameObject.tag == "LightningBolt")

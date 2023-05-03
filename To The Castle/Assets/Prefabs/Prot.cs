@@ -15,7 +15,7 @@ public class Prot : MonoBehaviour
 
     SpriteRenderer prSpR;
 
-    float runSpeed = 39.0f;
+    float runSpeed = 30.0f;
 
     Vector3 thisWaythisSpeed;
 

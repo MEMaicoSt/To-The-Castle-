@@ -90,26 +90,26 @@ public class Enemy2 : MonoBehaviour
         {
             if (protagHasShield.text == "Shield Equipped: 1")
             {
-                health -= 0.08f;
+                health -= 0.05f;
             }
 
             else
             {
-                health -= 0.02f;
+                health -= 0.01f;
             }
         }
         //if the enemy is kicked by the player
         if (hit.gameObject.tag == "hit")
         {
             Destroy(hit.gameObject);
-            health -= 0.06f;
+            health -= 0.03f;
         }
 
         //if the enemy is punched by the player
         if (hit.gameObject.tag == "hitpunch")
         {
             Destroy(hit.gameObject);
-            health -= 0.07f;
+            health -= 0.04f;
         }
 
         if (hit.gameObject.tag == "LightningBolt")
